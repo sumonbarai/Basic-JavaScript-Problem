@@ -327,6 +327,25 @@ for (let i = 0; i < result.length; i++) {
 
 </details>
 
+<details>
+<summary>Answer</summary>
+
+```javascript
+let first = 0;
+let second = 1;
+let fib = [];
+for (let i = 0; i < 6; i++) {
+  fib.push(first);
+
+  let next = first + second;
+  first = second;
+  second = next;
+}
+console.log(fib);
+```
+
+</details>
+
 ### Problem 15 :
 
 Create a function that will find the nth Fibonacci number using recursion
