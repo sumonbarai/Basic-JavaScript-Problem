@@ -1101,3 +1101,70 @@ console.log(priceConverter(products));
 ```
 
 </details>
+
+## Problem 21 :
+
+find out second height number
+
+```JavaScript
+const num = [3,6,89,45,76,90,32,34,67];
+```
+
+</details>
+
+<details>
+<summary>Solution 1</summary>
+
+```JavaScript
+const num = [1, 12, 2, 3, 4, 8, 10];
+let height = -Infinity;
+let second_height = -Infinity;
+
+for (let n of num) {
+  if (n > height) {
+    second_height = height;
+    height = n;
+  } else if (n > second_height && n != height) {
+    second_height = n;
+  }
+}
+
+console.log(second_height);
+```
+
+</details>
+
+<details>
+<summary>Solution 2</summary>
+
+```JavaScript
+let nums = [2, 4, 2, 100, 5, 7, 8, 9, 50];
+
+function calculateHightNumber(arr) {
+  let highest = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > highest) {
+      highest = nums[i];
+    }
+  }
+  return highest;
+}
+
+function calculateSecondHight(nums) {
+  const firstHighest = calculateHightNumber(nums);
+
+  let highest = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (firstHighest === nums[i]) continue;
+    if (nums[i] > highest) {
+      highest = nums[i];
+    }
+  }
+  return highest;
+}
+
+console.log(calculateSecondHight(nums));
+```
+
+</details>
